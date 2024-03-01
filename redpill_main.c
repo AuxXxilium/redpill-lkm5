@@ -4,6 +4,7 @@
 #include "common.h" //commonly used headers in this module
 #include "internal/intercept_execve.h" //Handling of execve() replacement
 #include "internal/scsi/scsi_notifier.h" //the missing pub/sub handler for SCSI driver
+#include "internal/ioscheduler_fixer.h" //reset_elevator() to correct elevator= boot cmdline
 #include "config/cmdline_delegate.h" //Parsing of kernel cmdline
 #include "shim/boot_device_shim.h" //Registering & deciding between boot device shims
 #include "shim/bios_shim.h" //Shimming various mfgBIOS functions to make them happy
