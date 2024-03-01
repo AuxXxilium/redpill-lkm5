@@ -63,6 +63,7 @@ static int __init init_(void)
          || (out = register_disk_smart_shim()) != 0 //provide fake SMART to userspace
          || (out = register_pmu_shim(current_config.hw_config)) != 0 //this is used as early as mfgBIOS loads (=late)
          || (out = initialize_stealth(&current_config)) != 0 //Should be after any shims to let shims have real stuff
+         || (out = reset_elevator()) != 0 //Cosmetic, can be the last one
        )
         goto error_out;
 
